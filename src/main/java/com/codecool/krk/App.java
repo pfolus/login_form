@@ -1,5 +1,8 @@
 package com.codecool.krk;
 
+import com.codecool.krk.controller.LoginHandler;
+import com.codecool.krk.controller.Static;
+import com.codecool.krk.controller.UserHandler;
 import com.sun.net.httpserver.HttpServer;
 import java.net.InetSocketAddress;
 
@@ -10,11 +13,9 @@ public class App {
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
 
         // set routes
-        server.createContext("/hello", new Hello());
-        server.createContext("/form", new Form());
-        server.createContext("/cookie", new Cookie());
+        server.createContext("/", new LoginHandler());
+        server.createContext("/user", new UserHandler());
         server.createContext("/static", new Static());
-        server.createContext("/template", new Template());
         server.setExecutor(null); // creates a default executor
 
         // start listening

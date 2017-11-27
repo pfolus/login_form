@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+
+<form class="login-form" method="post">
+    <p>Login:</p>
+    <input type="text" name="login" required oninvalid="this.setCustomValidity('Please enter your login')"
+           oninput="setCustomValidity('')">
+    <br>
+    <p>Password:</p>
+    <input type="password" name="password" required oninvalid="this.setCustomValidity('Please enter your password')"
+           oninput="setCustomValidity('')"><br>
+    <input id="submit" type="submit" value="Login">
+
+</form>
+
+</body>
+</html>
